@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := default
 
 default:
-	@echo "Fibonacci generator Build, Test, Deply Instructions"
+	@echo "Fibonacci generator Setup, Test, Run Instructions"
 	@echo "Only Tested on MacOS Catalina with Docker Desktop/Golang 1.15 installed."	
 	@echo "Docker Desktop Installation REQUIRED"		
 	@echo "Docker Compose Installation REQUIRED"			
@@ -54,9 +54,9 @@ run:
 	docker build -t fibo -f ./Dockerfile.fibo .		
 	@echo "###################################################"		
 	@echo "##############IMPORTANT README#####################################"	
-	@echo "Now enter 'docker-compose up -d<enter> to execute the demo"
-	@echo "Enter 'docker-compose down<enter> to stop the demo"	
-	@echo "Open your web browser and navigate to: http://localhost:8081 to see the API in action"		
+	@echo "Now enter 'docker-compose up -d <enter>' to execute the demo"
+	@echo "Enter 'docker-compose down<enter>' to stop the demo"	
+	@echo "Open your web browser and navigate to: 'http://localhost:8081' to see the API in action"		
 	@echo "###################################################"		
 	
 
