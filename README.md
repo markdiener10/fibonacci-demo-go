@@ -23,7 +23,7 @@ Further Instructions are available by entering "make <enter>" from the MacOS Ter
 Given the size of the project, I decided that the testing code did not require a separate package naming convention
 nor split out the test code from the project code.  Larger projects I would put test code into a test subdirectory.
 
-Having looked at dockertest, I decided that I wanted to run the demo using docker_compose and let the postresql docker container get spun up by the Makefile for unit testing purposes.  It would be good to compare notes if ory/dockertest is architected the way we would like for testing withing golang.  The os.exit() at the end of the dockertest examples is a little concerning.  I would like it to be able to have a lifetime longer than the current function scope.  Docker Desktop has an API that I skimmed, be interesting to see how this 
+Having looked at dockertest, I decided that I wanted to run the demo using docker_compose and let the postresql docker container get spun up by the Makefile for unit testing purposes.  It would be good to compare notes if ory/dockertest is architected the way we would like for testing withing golang.  The os.exit() at the end of the dockertest examples is a little concerning.  I would like it to be able to have a lifetime longer than the current function scope.  Docker Desktop has an API that I skimmed, be interesting to see how this plays out as Reserve Trust moves toward release.
 
 In the interest of time, I decided not to try to get distribution and testing onto Windows Platform.  The Makefile will likely run on Linux if you comment out the /Application/Docker.app option.  Windows may be closer to operation, but that would require some more testing.
 
