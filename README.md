@@ -35,6 +35,8 @@ runs in O(1),O(1).  The memoized version is using a go map, but there are other 
 With no mention about concurrency and thread safety in the technical evaluation requirements email, the only 
 thing we are using is the transactional nature of Postgresql to serialize web hits and their effects.
 
+More tests validating more edge cases and probing for further weakness, like no test exhaustively testing the count of intermediate value, the current test only has 2 cases.
+
 
 
 
