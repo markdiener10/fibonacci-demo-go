@@ -84,7 +84,7 @@ func Pgsetup() error {
 	}
 	defer db.Close()
 	sql := `DROP TABLE IF EXISTS public.memoized;`
-	sql += `CREATE TABLE public.memoized(idx bigint PRIMARY KEY,fibo integer);`
+	sql += `CREATE TABLE public.memoized(idx int PRIMARY KEY,fibo bigint);`
 	_, err = db.Exec(sql)
 	return err
 }
