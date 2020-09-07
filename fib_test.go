@@ -60,6 +60,17 @@ func TestFibClosed(t *testing.T) {
 	}
 }
 
+func TestCompareFastAlgorithms(t *testing.T) {
+	gfib := Tfibonacci{}
+	gfib.Init()
+	var i uint
+	for i = 0; i < 600; i++ {
+		if gfib.Faster(i) != gfib.Memoized(i) {
+			t.Error(i)
+		}
+	}
+}
+
 //40 takes too long on standard hardware for base case
 func BenchmarkBase(b *testing.B) {
 	gfib := Tfibonacci{}
