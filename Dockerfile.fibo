@@ -1,0 +1,3 @@
+FROM alpine:latest
+ADD go-fibonacci /
+CMD ["/go-fibonacci"]
