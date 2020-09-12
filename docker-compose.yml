@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   pgdb:
-    image: pg
+    image: pg-fibo
     ports: 
       - "5432:5432"
     environment:

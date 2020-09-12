@@ -16,18 +16,19 @@ default:
 desktop:
 	@echo "Starting docker desktop on MacOS"
 	open /Applications/Docker.app &
+	@echo "Wait around 10 seconds for docker to finish its initialization"	
 cleanup:	
 	@echo "Cleaning your docker environment"
 	docker ps -a -q | xargs docker stop
 	docker ps -a -q | xargs docker rm	
-	docker rmi -f pg | true		
+	docker rmi -f pg-fibo | true		
 	docker rmi -f fibo | true			
 setup:
 	@echo "Setting up your machine"
 	docker ps -a -q | xargs docker stop
 	docker ps -a -q | xargs docker rm	
 	docker build -t pg -f ./Dockerfile.postgres .	
-	docker run -d --name pg -e POSTGRES_PASSWORD=mysecretpassword -t -p 5432:5432 pg
+	docker run -d --name pg-fibo -e POSTGRES_PASSWORD=mysecretpassword -t -p 5432:5432 pg
 test:
 	@echo "Running tests"
 	go test 	
@@ -41,9 +42,9 @@ run:
 	#Remove all the containers	
 	docker ps -a -q | xargs docker rm	
 	#Remove any pg images
-	docker rmi -f pg | true		
+	docker rmi -f pg-fibo | true		
 	#Build the container again
-	docker build -t pg -f ./Dockerfile.postgres .	
+	docker build -t pg-fibo -f ./Dockerfile.postgres .	
 	rm -f ./go-fibonacci
 	rm -f ./go-modules	
 	#Build our golang binary

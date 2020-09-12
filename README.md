@@ -18,6 +18,8 @@ Make (gnu make)
 
 Further Instructions are available by entering "make <enter>" from the MacOS Terminal in the cloned repo directory.
 
+WARNING:  This make file is disruptive to your installed docker images.  
+
 ###########Developer Notes ###########################
 
 Given the size of the project, I decided that the testing code did not require a separate package naming convention
